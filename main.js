@@ -22,6 +22,7 @@ function updateState(stateInc)
     
 }
 setTimeout(() => {
+    initFromUrl();
     updateState("setup");
 }, (500));
 
@@ -51,6 +52,7 @@ function sort(){
 	result.push(listToCompare.pop());
 	popAndSort();
 };
+
 function popAndSort()
 {
 	if(listToCompare.length==0)
@@ -111,3 +113,41 @@ function compareNext()
 Array.prototype.insert = function ( index, item ) {
     this.splice( index, 0, item );
 };
+
+
+function initFromUrl()
+{
+    reset();
+    const httpVars= getUrlVars();
+    if(httpVars["participants"])
+        listToCompare = httpVars["participants"].split('$');
+    setParticipant();
+}
+
+function getUrl()
+{
+    let url ;
+    if(window.location.href.indexOf('?')<=-1)
+        url=window.location.href + '?';
+    else
+        url = window.location.href.slice(0,window.location.href.indexOf('?')+1);
+    
+    if(listToCompare.length>0)
+        url += 'participants='+ listToCompare.reduce((x,y) => (x + '$' + y));
+    
+    document.getElementById("url").value = url;
+}
+
+// Read a page's GET URL variables and return them as an associative array.
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}

@@ -3,6 +3,20 @@ body {
     vertical-align: middle;
     text-align: center;
   }
+  
+  .blue-button {
+    background-color: rgb(132, 211, 221);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer
+
+  }
 
   .button {
     background-color: #4CAF50;
@@ -17,6 +31,8 @@ body {
     cursor: pointer;
   }
 
+  
+
 
   input[type=text], select, textarea {
     width: 40%;
@@ -24,6 +40,10 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+  }
+
+  input[type=text]{
+    color:  rgb(129, 129, 129);
   }
 
   #result {
