@@ -18,6 +18,11 @@ body {
 
   }
 
+  #participants{
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+  }
+
   .button {
     background-color: #4CAF50;
     border: none;
@@ -31,11 +36,8 @@ body {
     cursor: pointer;
   }
 
-  
-
-
   input[type=text], select, textarea {
-    width: 40%;
+    width: 80%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -48,13 +50,28 @@ body {
 
   #result {
     width: 70%;
+  }
+
+  .participants {
+    display: inline-block;
+    width: 100%;
+    
+  }
+
+  #all {
+    -webkit-writing-mode: horizontal-tb !important;
+    padding: 12px;
+    resize: vertical;
+  }
+
+  ul {
     list-style-type: none;
     padding: 0;
     padding-left: 15%;
     margin: 0;
   }
   
-  #result li {
+  li {
     border: 1px solid #ddd;
     margin-top: -1px; /* Prevent double borders */
     background-color: #f6f6f6;

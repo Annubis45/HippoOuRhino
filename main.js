@@ -41,9 +41,9 @@ function setParticipant()
 {
     const elt = document.getElementById("all");
     if(listToCompare.length>0)
-        elt.value=listToCompare.reduce((x,y) => (x + '\n' + y));
+        elt.innerHTML = "<li>"+listToCompare.reduce((x,y) => x + "</li><li>"+y) + "</li>";
     else 
-        elt.value = "";
+        elt.innerHTML = "";
     
 }
 
@@ -57,6 +57,7 @@ function popAndSort()
 {
 	if(listToCompare.length==0)
     {
+        curr=null;
         console.log(result);
         document.getElementById("result").innerHTML = "<li>"+result.reduce((x,y) => x + "</li><li>"+y) + "</li>";
         updateState("end");
@@ -132,8 +133,11 @@ function getUrl()
     else
         url = window.location.href.slice(0,window.location.href.indexOf('?')+1);
     
-    if(listToCompare.length>0)
-        url += 'participants='+ listToCompare.reduce((x,y) => (x + '$' + y));
+    const addinUrl= [...listToCompare,...result];
+    if(curr)
+        addinUrl.push(curr);
+    if(addinUrl.length>0)
+        url += 'participants='+ addinUrl.reduce((x,y) => (x + '$' + y));
     
     document.getElementById("url").value = url;
 }
