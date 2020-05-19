@@ -1,0 +1,84 @@
+body {
+    background-color: #d1e9fc;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .blue-button {
+    background-color: rgb(132, 211, 221);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer
+
+  }
+
+  #participants{
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  input[type=text], select, textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type=text]{
+    color:  rgb(129, 129, 129);
+  }
+
+  #result {
+    width: 70%;
+  }
+
+  .participants {
+    display: inline-block;
+    width: 100%;
+    
+  }
+
+  #all {
+    -webkit-writing-mode: horizontal-tb !important;
+    padding: 12px;
+    resize: vertical;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    padding-left: 15%;
+    margin: 0;
+  }
+  
+  li {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+  

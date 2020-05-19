@@ -9,8 +9,16 @@
     <h1>Hippo ou Rhino</h1>
     <h2>What is the strongest?</h2>
     <div id="setup">
-        <textarea id="entry" name="subject" placeholder="Participants à ajouter..." style="height:200px"></textarea>
-        <textarea id="all" name="subject" placeholder="Liste des participants" style="height:200px" readonly></textarea>
+        <div id="participants"> 
+            <div></div>
+            <div>
+                <textarea id="entry" name="subject" placeholder="Participants à ajouter..." style="height:200px"></textarea>
+            </div>
+            <div>
+                <ul id="all"></ul>
+            </div>
+            <div></div>
+        </div>
         <div>
             <button class="button" onclick="add();">Ajouter</button>
             <button class="button" onclick="reset();">Reset</button>
@@ -27,6 +35,11 @@
         </ul>
         <button class="button" onclick="reset();">Reset</button>
     </div>
+    <div id="footer"> 
+        <input type="text" id="url" name="url" class="readonly" readonly placeholder="url..">
+        <button class="blue-button" onclick="getUrl();">Récuperer l'url</button>
+    </div>
+   
    
 </body>
 
